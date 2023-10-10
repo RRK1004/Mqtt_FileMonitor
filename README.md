@@ -20,13 +20,15 @@ Pre-requisites:
 
 
  Installation:
-- Clone the repo
-    'git clone  <REPO LINK>'
+ 
+- Clone the repository
   
-    'cd <FileMonitor>' 
+ 'git clone  <REPO LINK>'
+  
+  'cd <FileMonitor>' 
 
 - Build Docker image
-- 
+  
     'docker image -t <imagename> .'
 
 - Run Docker Container with builded image in one terminal
@@ -34,8 +36,8 @@ Pre-requisites:
     'docker run <imagename> &'
 
 - Exec Docker Container with command line arguments in another terminal
-- 
-    'docker exec -it <containerid> python3 FileMonitor.py --address 127.0.0.1 --port 1883 --path /app'
+  
+  'docker exec -it <containerid> python3 FileMonitor.py --address 127.0.0.1 --port 1883 --path /app'
   
         - `--path`, indicating which directory or file to monitor,
         - `--address`, indicating the MQTT broker address,
