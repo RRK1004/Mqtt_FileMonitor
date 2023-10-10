@@ -23,17 +23,17 @@ Pre-requisites:
  
 - Clone the repository
   
- 'git clone  <REPO LINK>'
+ 'git clone  REPO_LINK'
   
   'cd <FileMonitor>' 
 
 - Build Docker image
   
-    'docker image -t <imagename> .'
+    'docker image -t imagename .'
 
 - Run Docker Container with builded image in one terminal
-- 
-    'docker run <imagename> &'
+  
+    'docker run imagename &'
 
 - Exec Docker Container with command line arguments in another terminal
   
@@ -54,9 +54,9 @@ UseCase:
 
     Output :
 
-            'File /root/FileMonitor/README.md has been modified.
+            'File /root/FileMonitor/README.md has been modified.'
   
-            Folder modified /root/FileMonitor/README.md has been modified 18.83 KB.'
+            'Folder modified /root/FileMonitor/README.md has been modified 18.83 KB.'
 
         
 - New File Creation :
@@ -67,9 +67,9 @@ UseCase:
          'touch <filename>'
 
     Output : 
-        'File /root/FileMonitor/text.txt has been modified.
+        'File /root/FileMonitor/text.txt has been modified.'
   
-         Folder modified /root/FileMonitor/text.txt has been modified 19.16 KB.'
+         'Folder modified /root/FileMonitor/text.txt has been modified 19.16 KB.'
 
 -  File Deletion :
     It uses the on_deleted method , When a file or folder is deleted and print with the size
@@ -79,9 +79,9 @@ UseCase:
          'rm <filename>'
 
     Output : 
-        'File /root/FileMonitor/text.txt has been deleted.
+        'File /root/FileMonitor/text.txt has been deleted.'
    
-         Folder /root/FileMonitor/text.txt has been modified 20.11 KB.'
+         'Folder /root/FileMonitor/text.txt has been modified 20.11 KB.'
 
 
     Additionally, We have included the validations for below use cases,
