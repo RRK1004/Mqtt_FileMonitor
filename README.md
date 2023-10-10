@@ -21,17 +21,17 @@ Pre-requisites:
 
  Installation:
 - Clone the repo
-    'git clone "REPO LINK"'
+    'git clone  <REPO LINK>'
     'cd FileMonitor' 
 
 - Build Docker image 
-    'docker image -t imagename .'
+    'docker image -t <imagename> .'
 
 - Run Docker Container with builded image in one terminal
-    'docker run imagename &'
+    'docker run <imagename> &'
 
 - Exec Docker Container with command line arguments in another terminal
-    'docker exec -it containerid python3 FileMonitor.py --address 127.0.0.1 --port 1883 --path /app'
+    'docker exec -it <containerid> python3 FileMonitor.py --address 127.0.0.1 --port 1883 --path /app'
         - `--path`, indicating which directory or file to monitor,
         - `--address`, indicating the MQTT broker address,
         - `--port`, indicating the MQTT broker port.
@@ -75,6 +75,7 @@ UseCase:
 
 
     Additionally, We have included the validations for below use cases,
+   
         - Checking Path is a Directory
         - Checking the correct path 
         - Checking File permissions
