@@ -12,14 +12,13 @@ class MyHandler(FileSystemEventHandler):
         self.client = client
         self.path = path
 
-   
-
+    # Check File Modifications
     def on_modified(self, event):
         if event.is_directory:
             return
         print(f"File {event.src_path} has been modified.")
 
-        # Publish a message to MQTT
+        # Publish a message to MQTT for Newly created files
         self.client.publish("filesystem", f"File {event.src_path} has been modified.")
         if os.path.isdir(self.path):
             res=self.get_folder_size()
@@ -28,13 +27,13 @@ class MyHandler(FileSystemEventHandler):
         
 
  
-
+    # Publish a message to MQTT for deleted files
     def on_deleted(self, event):
         if event.is_directory:
             return
         print(f"File {event.src_path} has been deleted.")
         
-        # Publish a message to MQTT
+        
         self.client.publish("filesystem", f"File {event.src_path} has been deleted.")
         if os.path.isdir(self.path):
             res = self.get_folder_size()
@@ -77,7 +76,7 @@ def main(file_path, port, address):
         print(f"The specified path '{file_path}' does not exist. Exiting.")
         exit()
 
- 
+  # Publish a message to MQTT when file is not have permission
     if os.path.isdir(file_path):
         for dirpath, dirnames, filenames in os.walk(file_path):
             for filename in filenames:
@@ -96,8 +95,8 @@ def main(file_path, port, address):
     client.on_connect = on_connect
     client.on_message = on_message
     client.connect(address, int(port), 60)  # Update with your MQTT broker information
+ 
     # Set up filesystem monitor with the client
-
     path = file_path  # Update with the directory you want to monitor
     event_handler = MyHandler(client,path)
     observer = Observer()
