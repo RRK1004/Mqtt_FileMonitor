@@ -22,16 +22,21 @@ Pre-requisites:
  Installation:
 - Clone the repo
     'git clone  <REPO LINK>'
-    'cd FileMonitor' 
+  
+    'cd <FileMonitor>' 
 
-- Build Docker image 
+- Build Docker image
+- 
     'docker image -t <imagename> .'
 
 - Run Docker Container with builded image in one terminal
+- 
     'docker run <imagename> &'
 
 - Exec Docker Container with command line arguments in another terminal
+- 
     'docker exec -it <containerid> python3 FileMonitor.py --address 127.0.0.1 --port 1883 --path /app'
+  
         - `--path`, indicating which directory or file to monitor,
         - `--address`, indicating the MQTT broker address,
         - `--port`, indicating the MQTT broker port.
@@ -48,6 +53,7 @@ UseCase:
     Output :
 
             'File /root/FileMonitor/README.md has been modified.
+  
             Folder modified /root/FileMonitor/README.md has been modified 18.83 KB.'
 
         
@@ -60,6 +66,7 @@ UseCase:
 
     Output : 
         'File /root/FileMonitor/text.txt has been modified.
+  
          Folder modified /root/FileMonitor/text.txt has been modified 19.16 KB.'
 
 -  File Deletion :
@@ -71,6 +78,7 @@ UseCase:
 
     Output : 
         'File /root/FileMonitor/text.txt has been deleted.
+   
          Folder /root/FileMonitor/text.txt has been modified 20.11 KB.'
 
 
