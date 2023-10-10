@@ -33,7 +33,7 @@ Pre-requisites:
 
 - Run Docker Container with builded image in one terminal
   
-    'docker run -it imagename &'
+    'docker run imagename &'
 
 - Exec Docker Container with command line arguments in another terminal
   
